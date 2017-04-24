@@ -1,0 +1,34 @@
+<!--vyn där användaren fyller i all obligatorisk information. alla fält är obligatoriska.
+ng-model direktiv används för att spara data i objektet. ng-show direktiv används för att visa felmeddelanden till användaren 
+om något av fälten är ogiltigt -->
+<ion-view view-title="Dina uppgifter">
+        <ion-content class="padding backgrnd">
+                <form name="uppgifter" ng-submit="addData()">
+                        <div class="list">
+                                <label class="item item-input item-stacked-label">
+    <span class="input-label">Förnamn*</span>
+    <input type="text" placeholder="Namn" name="fornamn" ng-model="input.namn" autocomplete="name" required>
+    <span ng-show="uppgifter.fornamn.$dirty && uppgifter.fornamn.$invalid">Det här fältet kan inte vara tomt</span>
+  </label>
+                                <label class="item item-input item-stacked-label">
+    <span class="input-label">Efternamn*</span>
+    <input type="text" placeholder="Efternamn" name="efternamn" ng-model="input.efternamn" required>
+    <span ng-show="uppgifter.efternamn.$dirty && uppgifter.efternamn.$invalid">Det här fältet kan inte vara tomt</span>
+  </label>
+                                <label class="item item-input item-stacked-label">
+    <span class="input-label">E-post*</span>
+    <input type="email" name="mejl" placeholder="epost@gmail.com" ng-model="input.email" required><br>
+     <span ng-show="uppgifter.mejl.$error.email">E-postadressen är ogiltig</span>
+  </label>
+                                <label class="item item-input item-stacked-label">
+    <span class="input-label">Mobilnummer*</span>
+    <input type="number" ng-minlength="10" pattern="07[0-9]{8}" placeholder="07XXXXXXXX" name="mobil" ng-model="input.mobil" required>
+    <span ng-show="uppgifter.mobil.$invalid && uppgifter.mobil.$dirty">Mobilnummer ska innehålla minst 10 tecken</span>
+  </label>
+                        </div>
+                        <p>Fält markerade med * är obligatoriska och måste fyllas i</p>
+                        <button type="submit" class="button button-positive book" ng-disabled="uppgifter.fornamn.$invalid || uppgifter.efternamn.$invalid || uppgifter.mobil.$invalid || uppgifter.mejl.$error.email || uppgifter.mejl.$invalid"
+                                ng-click="goBekraftelse()">BOKA</button>
+                </form>
+        </ion-content>
+</ion-view>

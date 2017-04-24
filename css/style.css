@@ -1,0 +1,31 @@
+/* Empty. Add your own CSS if you like */
+.splash{
+    background: url(../img/stockholm1.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    vertical-align: center;
+}
+.backgrnd{
+    background: url(../img/stockholm2.jpg) no-repeat center center fixed;
+}
+.book{
+    border-radius: 10%;
+    position:  relative;
+}
+.branding{
+    width: 75%;
+    max-width: 200px;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+    color: black;
+    font-weight: 900;
+}
+.welcome{
+    font-weight: 900;
+    width:90%;
+    text-align: center;
+     margin: 0 auto;
+}

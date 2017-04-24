@@ -1,0 +1,37 @@
+    [
+        {
+            "namn": "Single",
+            "kapacitet" : "Max 1 person",
+            "imageUrl": "img/Single.jpg",
+            "beskrivning": "Rumstypen 'Single' för en person bjuder på ca 20-22 välplanerade kvadratmeter med utmärkt arbetsyta, bra förvaring, LCD-tv och en god natts sömn i våra sängar. Standardrum finns med 140 cm, 160 cm eller två 90 cm sängar. Badrummen är rymliga, vissa med dusch och andra med bad.",
+            "pris": 900
+        },
+        {
+            "namn": "Singl+",
+            "kapacitet" : "Max 1 person",
+            "imageUrl": "img/Singl+.jpg",
+            "beskrivning": "Rumstypen 'Single' för en person bjuder på ca 22-25 välplanerade kvadratmeter med utmärkt arbetsyta, bra förvaring, LCD-tv och en god natts sömn i våra sängar. Standardrum finns med 140 cm, 160 cm eller två 90 cm sängar. Badrummen är rymliga, vissa med dusch och andra med bad.",
+            "pris": 1200
+        },
+        {
+            "namn": "Double",
+            "kapacitet" : "Max 2 personer",
+            "imageUrl": "img/Double.jpg",
+            "beskrivning": "Rumstypen 'Double' för två personer bjuder på 25 välplanerade kvadratmeter med utmärkt arbetsyta, bra förvaring, LCD-tv och en god natts sömn i våra sängar. Standardrum finns med 140 cm, 160 cm eller två 90 cm breda sängar. Badrummen är rymliga, vissa med dusch och andra med bad.",
+            "pris": 1800
+        },
+        {
+            "namn": "Doubl+",
+            "kapacitet" : "Max 3 person",
+            "imageUrl": "img/Doubl+.jpg",
+            "beskrivning": "Rumstypen 'Single' för tre personer bjuder på ca 25-30 välplanerade kvadratmeter med utmärkt arbetsyta, bra förvaring, LCD-tv och en god natts sömn i våra sängar. Standardrum finns med 140 cm, 160 cm eller tre 90 cm sängar. Badrummen är rymliga, vissa med dusch och andra med bad.",
+            "pris": 2000
+        },
+        {
+            "namn": "Familj",
+            "kapacitet" : "Max 4 personer",
+            "imageUrl": "img/Familj.jpg",
+            "beskrivning": "Rumstypen 'Familj' är ett Standard dubbelrum på ca 30-35 kvadratmeter med en mindre bäddbar soffa, för familjer med två vuxna och upp till två barn. Badrummen är rymliga, vissa med dusch och andra med bad.",
+            "pris": 2500
+        }
+    ]
