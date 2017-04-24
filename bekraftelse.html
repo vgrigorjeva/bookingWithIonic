@@ -1,0 +1,26 @@
+<!--Sista vyn i bokningen där användaren ser sammanfattning av sin gjord bokning.
+Härifrån kan man godkänna bokningen eller gå tillbaka och ändra bokningsuppgifter-->
+<ion-view view-title="Sammanfattning" hide-back-button="false">
+    <ion-content class="padding backgrnd">
+        <ion-list>
+            <ion-item>Check-in: {{input.minDate | date}}</ion-item>
+            <ion-item>Check-ut: {{input.minDateUt | date}}</ion-item>
+            <ion-item>Antal vuxna: {{input.vuxna}}</ion-item>
+            <!--Visas endast om användaren har valt antal barn -->
+            <ion-item ng-if="input.barn">Antal barn: {{input.barn}}</ion-item>
+            <!--Visas endast om användaren har inte valt antal barn. Visas "default" värde - 0 barn -->
+            <ion-item ng-if="!input.barn">Antal barn: 0</ion-item>
+            <ion-item>Valt rum: {{input.fullrum.namn}}</ion-item>
+            <ion-item>Pris per natt: {{input.fullrum.pris}}</ion-item>
+            <ion-item>Förnamn: {{input.namn}}</ion-item>
+            <ion-item>Efternamn: {{input.efternamn}}</ion-item>
+            <ion-item>E-post: {{input.email}}</ion-item>
+            <ion-item>Mobilnummer: {{input.mobil}}</ion-item>
+            <!--skillnaden mellan in och utcheckningsdatum beräknas mha angularjs filter amDifference.
+            Det totala priset räknas ut-->
+            <ion-item>Att betala: {{(input.fullrum.pris*1) * ((input.minDate | amDifference : input.minDateUt : 'days')*(-1)) }}</ion-item>
+        </ion-list>
+        <!--Knappen skickar användaren till '/home' vyn och rensar alla input fält -->
+        <button class="button button-positive book" ng-click="goToStart()">Bekräfta och avsluta</button>
+    </ion-content>
+</ion-view>

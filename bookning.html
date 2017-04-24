@@ -1,0 +1,74 @@
+<!--vyn där användaren anger in- och utcheckningsdatum samt antal vuxna och barn.
+från den här vyn skickas användaren vidare till lista med alla rum. Tillbaka knappen är dold 
+för att användaren ska inte kunna navigera till välkomstsidan -->
+<ion-view view-title="Bokning" hide-back-button="true">
+    <ion-content class=" padding backgrnd">
+        <md-content>
+            <form name="myForm">
+                <div layout-gt-xs="row">
+                    <div flex-gt-xs="">
+                        <h4>Incheckningsdatum* </h4>
+                        <!--angular material md-datepicker används för att välja incheckningsdatum. md-min-date anger det minsta tillåtna incheckningsdatum.
+                        MInsta tillåtna datumet hämtas från app.js $scope.minDate variabeln. ng-model sparar inputvärde från md-datepicker. Fältet är obligatoriskt-->
+                        <md-datepicker name="in" ng-model="input.minDate" md-placeholder="Välj datum" md-min-date="minDate" required=""></md-datepicker>
+                        <!--ng-messages används för att informera användaren om det hade varit fel. i det här fallet visas felmeddelandet om användaren
+                        har redan använt inputfältet($dirty) men har rensat det och lämnat fältet tomt($error). På så sätt visas inte informationen direkt när användaren kommer till vyn.
+                        -->
+                        <div class="errors" ng-messages="myForm.in.$dirty && myForm.in.$error">
+                            <div ng-message="required">Välj incheckningsdatum</div>
+                        </div>
+                    </div>
+                </div>
+                <div layout-gt-xs="row">
+                    <div flex-gt-xs="">
+                        <h4>Utcheckningsdatum* </h4>
+                        <!--angular material md-datepicker används för att välja utcheckningsdatum. md-min-date anger det minsta tillåtna beginnelsevärde för utcheckningsdatum.
+                        MInsta tillåtna datumet hämtas från app.js $scope.minDateUt variabeln. ng-model sparar inputvärde från md-datepicker. Fältet är obligatoriskt-->
+                        <md-datepicker name="ut" ng-model="input.minDateUt" md-placeholder="Välj datum" md-min-date="minDateUt" required=""></md-datepicker>
+                        <!--ng-messages används för att informera användaren om det hade varit fel. i det här fallet visas felmeddelandet om användaren
+                        har redan använt inputfältet($dirty) men har rensat det($error). På så sätt visas inte informationen direkt när användaren kommer till vyn.
+                         -->
+                        <div class="errors" ng-messages="myForm.ut.$dirty && myForm.ut.$error">
+                            <div ng-message="required">Välj utcheckningsdatum</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <!--md-input-container directive är "parent" för input element -->
+                        <md-input-container flex="50">
+                            <label>Vuxna*</label>
+                            <!--directive md-select visar select box bunden till ng-model. fältet är
+                                obligatoriskt. -->
+                            <md-select name="vuxna" ng-model="input.vuxna" required="">
+                                <md-option value="1">1</md-option>
+                                <md-option value="2">2</md-option>
+                                <md-option value="3">3</md-option>
+                            </md-select>
+                            <!--felmeddelandet visas om användaren inte väljer antal vuxna -->
+                            <div class="errors" ng-messages="myForm.vuxna.$error">
+                                <div ng-message="required">Minst 1 vuxen!</div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                    <div class="col">
+                        <md-input-container flex="50">
+                            <label>Barn</label>
+                            <md-select name="barn" ng-model="input.barn">
+                                <md-option value="0" ng-init="input.barn=true">0</md-option>
+                                <md-option value="1" ng-init="input.barn=true">1</md-option>
+                                <md-option value="2" ng-init="input.barn=true">2</md-option>
+                                <md-option value="3" ng-init="input.barn=true">3</md-option>
+                            </md-select>
+                        </md-input-container>
+                    </div>
+                </div>
+            </form>
+        </md-content>
+        <p>Fält markerade med * är obligatoriska och måste fyllas i</p>
+        <!--Knappen är inaktiverad så länge åtminstone ett av dem obligatoriska fälten är ogiltigt.
+        Knappen skickar användaren vidare till '/allaRum' vyn -->
+        <button ng-disabled="myForm.vuxna.$invalid || myForm.in.$invalid || myForm.ut.$invalid" class="button button-positive book"
+            ng-click="goAllaRum()">Nästa</button>
+    </ion-content>
+</ion-view>

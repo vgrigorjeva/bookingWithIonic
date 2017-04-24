@@ -1,0 +1,12 @@
+<!--En enkel vy som visas när man öppnar applikationen -->
+<!--Tillbaka knappen är dold i den här vyn eftersom det finns ingen "parent"-vy -->
+<ion-view hide-back-button="true">
+    <ion-content class="splash padding">
+        <h4 class="welcome">Välkommen till Stockholm Bed and Breakfast!</h4>
+        <div class="branding">
+            <p> Stockholm Bed and Breakfast är ett myssigt hotell beläget mitt i Stockholms gamla stan </p>
+            <!--knapp som skickar användaren vidare till bokningen mha ng-click och funktionen goBookningen -->
+            <button class="button button-positive book" ng-click="goBookning()">Boka nu!</button>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title></title>
+
+  <link rel="manifest" href="manifest.json">
+  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- ionic/angularjs js -->
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/0.10.1/angular-moment.min.js"></script>
+  <!-- cordova script (this will be a 404 during development) -->
+  <script src="cordova.js"></script>
+  <!-- your app's js -->
+  <script src="js/app.js"></script>
+</head>
+
+<body ng-app="starter">
+  <!--declares ionNavBar; also gives it a style with bar-positive class-->
+  <ion-nav-bar class="bar-positive">
+    <!--declares ionnavbackButton, which will show and hide if there is a way to go back -->
+    <ion-nav-back-button class="button-clear">
+      <!--uses arrow back icon for back button -->
+      <i class="icon ion-ios-arrow-left"></i>Tillbaka</ion-nav-back-button>
+  </ion-nav-bar>
+  <!--i ion-nav-view kommer innehåll av den aktuella vyn att visas -->
+  <ion-nav-view></ion-nav-view>
+</body>
+
+</html>

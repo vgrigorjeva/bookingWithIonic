@@ -1,0 +1,26 @@
+<!--vyn för detaljerad information om ett valt rum. -->
+<ion-view view-title="Rum detaljer" hide-back-button="false">
+    <ion-content class="padding backgrnd">
+        <ion-list class="list-inset">
+            <!--alla rum hämtas från rum.json filen. därefter appliceras angularjs filter
+            som innehåller rumnamn och endast rum med detta namn visas sedan i listan. 
+            i det här fallet blir det endast ett rum i listan eftersom varje rum har sitt unikt namn.
+            på så sätt får man en detaljerad lista för endast ett rum -->
+            <ion-item class="item-text-wrap" ng-repeat="item in rum  | filter: {namn: whichrum}">
+                <h2>{{item.namn}}</h2><br>
+                <!--hämtar rumnamn från rum.json fil för ett valt rum -->
+                <img ng-src="img/{{item.namn}}.jpg" alt="{{ item.namn }} Photo"><br>
+                <!--hämtar rumsbild från rum.json fil för ett valt rum -->
+                <br>
+                <p>{{item.beskrivning}}</p><br>
+                <!--hämtar rumsbeskrivning från rum.json fil för ett valt rum -->
+                <h4>{{item.kapacitet}}</h4>
+                <!--hämtar rumskapacitet från rum.json fil för ett valt rum -->
+                <h3>{{item.pris}} sek/natt</h3>
+                <!--hämtar rumspris från rum.json fil för ett valt rum -->
+            </ion-item>
+            <!--knappen skickar användaren vidare till '/uppgifter' vyn -->
+            <button class="button button-positive book" ng-click="goUppgifter()">Välj detta rum</button>
+        </ion-list>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,23 @@
+<!--vyn med alla rum lista -->
+<ion-view view-title="Våra rum" hide-back-button="false">
+  <ion-content class="padding backgrnd">
+    <ion-list>
+      <!--data om varje rum hämtas från rum.json fil och skrivs ut i ion-lists mha ng-repeat där ion-item är ett rum med all dess information.
+      när användaren klickar på item anropas funktionen kopieraRum(item) med det aktuella rummet som argument.
+      Användaren skickas vidare till detaljerad rum vy med item.namn som argument-->
+      <ion-item ng-repeat="item in rum" class="item-thumbnail-left item-text-wrap item-icon-right" href="#/rumdetaljer/{{item.namn}}"
+        ng-click="kopieraRum(item)">
+        <img src="img/{{item.namn}}.jpg" alt="photo">
+        <!--hämtar rumsbild från rum.json fil -->
+        <h2>{{item.namn}}</h2>
+        <!--hämtar rumnamn från rum.json fil -->
+        <h4>{{item.kapacitet}}</h4>
+        <!--hämtar rumkapacitet från rum.json fil -->
+        <h3>{{item.pris}} sek/natt</h3>
+        <!--hämtar rumspris från rum.json fil -->
+        <p>{{item.beskrivning | limitTo:50}}</p>
+        <!--hämtar rumsbeskrivning från rum.json fil -->
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
